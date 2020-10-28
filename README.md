@@ -19,7 +19,7 @@ planck_plot.py creates the following:
 
 ## Spectral Curves
 
-spectral_plot.py plots, along with data from the ![USGS Spectral Library](https://www.usgs.gov/energy-and-minerals/mineral-resources-program/science/usgs-high-resolution-spectral-library),
+spectral_plot.py plots, along with data from the [USGS Spectral Library](https://www.usgs.gov/energy-and-minerals/mineral-resources-program/science/usgs-high-resolution-spectral-library),
 the spectral response curves for a variety of objects, as well as a band showing the visible portion of the EM spectrum.
 
 ![](spectral_plot_vis.png)
