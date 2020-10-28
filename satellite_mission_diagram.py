@@ -120,7 +120,8 @@ wv = [('IKONOS', 1999.75, 2015.25, 0, 1),
       ('WorldView-2', 2009.75, today, 0, 1),
       (None, today, 2025, 0, 0.2),
       ('WorldView-3', 2014.5, today, 0, 1),
-      (None, today, 2025, 0, 0.2)]
+      (None, today, 2025, 0, 0.2),
+      ('WorldView-4', 2016.9, 2019, 0, 1)]
 
 rapideye = [('RapidEye', 2008.75, 2020.25, 1, 1)]
 
