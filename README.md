@@ -7,6 +7,9 @@ These are a few plots that I've made that might prove to be useful for lectures,
 satellite_mission_diagram.py creates the following:
 ![](SatelliteMissions.png)
 
+If you uncomment the last few lines of the code, it will add a box around the free data:
+![](SatelliteMissionsFree.png)
+
 
 ## Planck Plot
 
