@@ -24,3 +24,11 @@ the spectral response curves for a variety of objects, as well as a band showing
 
 ![](spectral_plot_vis.png)
 
+
+## Atmospheric Transmission and Satellite Bands
+
+transmission_plot.py plots makes a plot of satellite sensor bands, along with the atmospheric transmission as a function of wavelength. Transmission data are based on the [ASTM G-173 reference spectra](https://www.nrel.gov/grid/solar-resource/spectra-am1.5.html) for wavelengths <4000 nm, and the ATRAN [^1] curves provided by the [Gemini Observatory](https://www.gemini.edu/observing/telescopes-and-sites/sites) for wavelengths >4000 nm.
+
+![](TransmissionSensorBands.png)
+
+[^1]: ATRAN modelling software (Lord, S.D. 1992, NASA Technical Memor. 103957)
