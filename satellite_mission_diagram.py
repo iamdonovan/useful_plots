@@ -87,7 +87,7 @@ terra = [('ASTER', 1999.9, today, 2, 1),
          (None, today, 2025, 4, 0.2)]
 
 # sentinel-2
-sentinel = [('Sentinel-2 MSI', 2013.5, today, 2, 1),
+sentinel = [('Sentinel-2 MSI', 2015.5, today, 2, 1),
             (None, today, 2025, 2, 0.2)]
 
 # SPOT
