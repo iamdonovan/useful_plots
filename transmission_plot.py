@@ -9,17 +9,17 @@ def make_band_patch(lmin, lmax, color, yloc, height, **kwargs):
     return Rectangle((lmin, yloc), lmax-lmin, height, fc=color, ec='k', **kwargs)
 
 
-def annotate_patch(ax, patch, label):
+def annotate_patch(ax, patch, label, fontsize):
     start = patch.get_x() + patch.get_width() / 2 # center horizontally
     yloc = patch.get_y() + patch.get_height() / 2 # center vertically
     lab = ax.annotate(label, xy=(start, yloc), xytext=(0, 0),
                       textcoords='offset points',
-                      ha='center', va='center', color='w', size=11) # use 11 pt font, centered vertically, left-aligned, ...
+                      ha='center', va='center', color='w', size=fontsize) # use 11 pt font, centered vertically, left-aligned, ...
     return lab
 
 
 
-def plot_sensor(ax0, ax1, sens, yloc, height, **kwargs):
+def plot_sensor(ax0, ax1, sens, yloc, height, fontsize=11, **kwargs):
     patch_list = []
 
     for b in sens['bands']:
@@ -30,10 +30,10 @@ def plot_sensor(ax0, ax1, sens, yloc, height, **kwargs):
         if num is not None:
             if ax0.get_xlim()[1] > lmin:
                 ax0.add_patch(this_patch)
-                annotate_patch(ax0, this_patch, str(num))
+                annotate_patch(ax0, this_patch, str(num), fontsize)
             else:
                 ax1.add_patch(this_patch)
-                annotate_patch(ax1, this_patch, str(num))
+                annotate_patch(ax1, this_patch, str(num), fontsize)
 
     right = max([b.get_bbox().xmax for b in patch_list])
 
@@ -174,6 +174,43 @@ aster = {'name': 'ASTER',
 aster_3b = {'name': None,
             'bands': [('3B', 780, 860, 'darkred')]}
 
+modis = {'name': 'MODIS',
+         'bands': [(1, 620, 670, 'r'),
+                   (2, 841, 876, 'darkred'),
+                   (3, 459, 479, 'b'),
+                   (4, 545, 565, 'g'),
+                   (5, 1230, 1250, 'dimgray'),
+                   (6, 1628, 1652, 'dimgray'),
+                   (7, 2105, 2155, 'dimgray'),
+                   (8, 405, 420, 'b'),
+                   (9, 438, 448, 'b'),
+                   (10, 483, 493, 'b'),
+                   (11, 526, 536, 'g'),
+                   (12, 546, 556, 'g'),
+                   (13, 662, 672, 'r'),
+                   (14, 673, 683, 'r'),
+                   (15, 743, 753, 'darkred'),
+                   (16, 862, 877, 'darkred'),
+                   (17, 890, 920, 'darkred'),
+                   (18, 931, 941, 'darkred'),
+                   (19, 915, 965, 'darkred'),
+                   (20, 3660, 3840, 'silver'),
+                   ('21-22', 3929, 3989, 'silver'),
+                   (23, 4020, 4080, 'silver'),
+                   (24, 4433, 4498, 'gainsboro'),
+                   (25, 4482, 4549, 'gainsboro'),
+                   (26, 1360, 1390, 'silver'),
+                   (27, 6535, 6895, 'silver'),
+                   (28, 7175, 7475, 'silver'),
+                   (29, 8400, 8700, 'silver'),
+                   (30, 9580, 9880, 'khaki'),
+                   (31, 10780, 11280, 'khaki'),
+                   (32, 11770, 12270, 'khaki'),
+                   (33, 13185, 13485, 'khaki'),
+                   (34, 13485, 13785, 'khaki'),
+                   (35, 13785, 14085, 'khaki'),
+                   (36, 14085, 14385, 'khaki')]}
+
 plot_sensor(ax0, ax1, landsat_mss, 5, 5)
 plot_sensor(ax0, ax1, landsat_tm, 15, 5)
 plot_sensor(ax0, ax1, landsat_etm, 30, 5)
@@ -186,6 +223,8 @@ plot_sensor(ax0, ax1, aster_3b, 47, 3)
 
 plot_sensor(ax0, ax1, sentinel2, 60, 5)
 plot_sensor(ax0, ax1, sentinel2_8a, 57, 3)
+
+# plot_sensor(ax0, ax1, modis, 70, 5, fontsize=8)
 
 fig.savefig('TransmissionSensorBands.png', bbox_inches='tight', dpi=300)
 
