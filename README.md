@@ -29,6 +29,8 @@ the spectral response curves for a variety of objects, as well as a band showing
 
 transmission_plot.py plots makes a plot of satellite sensor bands, along with the atmospheric transmission as a function of wavelength. Transmission data are based on the [ASTM G-173 reference spectra](https://www.nrel.gov/grid/solar-resource/spectra-am1.5.html) for wavelengths <4000 nm, and the ATRAN<a href="#note1" id="note1ref"><sup>1</sup></a> curves provided by the [Gemini Observatory](https://www.gemini.edu/observing/telescopes-and-sites/sites) for wavelengths >4000 nm.
 
+Available for both VHR satellite (Worldview/Pleiades class, <5M GSD), and lower resolution remote sensing sattelites (Landsat/Sentinel-2 class).
+
 ![](TransmissionSensorBands.png)
 
 ### Footnotes
