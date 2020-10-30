@@ -28,8 +28,9 @@ def plot_sensor(ax0, sens, yloc, height, **kwargs):
         patch_list.append(this_patch)
         
         if num is not None:
-            ax0.add_patch(this_patch)
-            annotate_patch(ax0, this_patch, str(num))
+            if ax0.get_xlim()[1] > lmin:
+                ax0.add_patch(this_patch)
+                annotate_patch(ax0, this_patch, str(num))
         	
     right = max([b.get_bbox().xmax for b in patch_list])
 
@@ -66,9 +67,15 @@ ax0.add_patch(Polygon(data.values, alpha=0.5))
 # ax1.spines['top'].set_visible(False)
 #ax1.set_yticks([])
 
-ax0.set_xlim(350, 2050)
+# if SWIR
+#ax0.set_xlim(350, 2050)
+#ax0.set_ylim(0, 100)
+#ax0.set_xticks(range(400, 2050, 200))
+
+#if only up to NIR
+ax0.set_xlim(350, 1150)
 ax0.set_ylim(0, 100)
-ax0.set_xticks(range(400, 2050, 200))
+ax0.set_xticks(range(400, 1150, 200))
 
 #ax1.set_xlim(8000, 14000)
 #ax1.set_xticks(range(8000, 15000, 2000))
@@ -201,33 +208,50 @@ Spot_6_7_P = {'name': None,
                'bands':  [('P', 450, 745, 'gray')]}  
 
 
-plot_sensor(ax0, Spot_1_2_3, 5, 5)
-plot_sensor(ax0, Spot_1_2_3_P, 2, 3)
-plot_sensor(ax0, Spot_4, 15, 5)
-plot_sensor(ax0, Spot_4_M, 15, 5)
-plot_sensor(ax0, Spot_4_P, 12, 3)
-plot_sensor(ax0, Spot_5, 25, 5)
-plot_sensor(ax0, Spot_5_M, 25, 5)
-plot_sensor(ax0, Spot_5_P, 22, 3)
-plot_sensor(ax0, Spot_6_7, 35, 5)
-plot_sensor(ax0, Spot_6_7_P, 32, 3)
-plot_sensor(ax0, Pleiades_1, 45, 2.5)
-plot_sensor(ax0, Pleiades_1_G, 47.5, 2.5)
-plot_sensor(ax0, Pleiades_1_P, 42, 3)
-plot_sensor(ax0, Pleiades_NEO, 55, 2.5)
-plot_sensor(ax0, Pleiades_NEO_G, 57.5, 2.5)
-plot_sensor(ax0, Pleiades_NEO_P, 52, 3)
-plot_sensor(ax0, WV_4, 65, 5)
-plot_sensor(ax0, WV_4_P, 62, 3)
-plot_sensor(ax0, WV_3, 75, 5)
-plot_sensor(ax0, WV_3_P, 72, 3)
-plot_sensor(ax0, WV_3_NIR1, 75, 2.5)
-plot_sensor(ax0, WV_3_NIR2, 77.5, 2.5)
-plot_sensor(ax0, WV_2, 85, 5)
-plot_sensor(ax0, WV_2_P, 82, 3)
-plot_sensor(ax0, GE_1, 95, 5)
-plot_sensor(ax0, GE_1_P, 92, 3)
+## French series
+#plot_sensor(ax0, Spot_1_2_3, 5, 5)
+#plot_sensor(ax0, Spot_1_2_3_P, 2, 3)
+#plot_sensor(ax0, Spot_4, 15, 5)
+#plot_sensor(ax0, Spot_4_M, 15, 5)
+#plot_sensor(ax0, Spot_4_P, 12, 3)
+#plot_sensor(ax0, Spot_5, 25, 5)
+#plot_sensor(ax0, Spot_5_M, 25, 5)
+#plot_sensor(ax0, Spot_5_P, 22, 3)
+#plot_sensor(ax0, Spot_6_7, 35, 5)
+#plot_sensor(ax0, Spot_6_7_P, 32, 3)
+#plot_sensor(ax0, Pleiades_1, 45, 2.5)
+#plot_sensor(ax0, Pleiades_1_G, 47.5, 2.5)
+#plot_sensor(ax0, Pleiades_1_P, 42, 3)
+#plot_sensor(ax0, Pleiades_NEO, 55, 2.5)
+#plot_sensor(ax0, Pleiades_NEO_G, 57.5, 2.5)
+#plot_sensor(ax0, Pleiades_NEO_P, 52, 3)
+#
+##DigitalGlobe
+#plot_sensor(ax0, WV_4, 5, 5)
+#plot_sensor(ax0, WV_4_P, 2, 3)
+#plot_sensor(ax0, WV_3, 15, 5)
+#plot_sensor(ax0, WV_3_P, 12, 3)
+#plot_sensor(ax0, WV_3_NIR1, 15, 2.5)
+#plot_sensor(ax0, WV_3_NIR2, 17.5, 2.5)
+#plot_sensor(ax0, WV_2, 25, 5)
+#plot_sensor(ax0, WV_2_P, 22, 3)
+#plot_sensor(ax0, GE_1, 35, 5)
+#plot_sensor(ax0, GE_1_P, 32, 3)
 
+# Current
+plot_sensor(ax0, Spot_6_7, 5, 5)
+plot_sensor(ax0, Spot_6_7_P, 2, 3)
+plot_sensor(ax0, Pleiades_1, 15, 2.5)
+plot_sensor(ax0, Pleiades_1_G, 17.5, 2.5)
+plot_sensor(ax0, Pleiades_1_P, 12, 3)
+plot_sensor(ax0, WV_3, 25, 5) 
+plot_sensor(ax0, WV_3_P, 22, 3)
+plot_sensor(ax0, WV_3_NIR1, 25, 2.5)
+plot_sensor(ax0, WV_3_NIR2, 27.5, 2.5)
+plot_sensor(ax0, WV_2, 35, 5)
+plot_sensor(ax0, WV_2_P, 32, 3)
+plot_sensor(ax0, GE_1, 45, 5)
+plot_sensor(ax0, GE_1_P, 42, 3)
 
 fig.savefig('TransmissionVHRSensorBands.png', bbox_inches='tight', dpi=300)
 
