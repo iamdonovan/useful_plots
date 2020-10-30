@@ -75,7 +75,7 @@ ax0.add_patch(Polygon(data.values, alpha=0.5))
 #if only up to NIR
 ax0.set_xlim(350, 1150)
 ax0.set_ylim(0, 100)
-ax0.set_xticks(range(400, 1150, 200))
+ax0.set_xticks(range(400, 1150, 100))
 
 #ax1.set_xlim(8000, 14000)
 #ax1.set_xticks(range(8000, 15000, 2000))
@@ -95,7 +95,21 @@ ax.set_xlabel('wavelength (nm)', size=20, labelpad=35)
 #ax.plot((-d + off, +d + off), (1-d, 1+d), **kwargs)
 
 # now, add a sensor
-
+RapidEye = {'name': 'RapidEye',
+               'bands':  [('B', 440, 510, 'b'),
+			              ('G', 520, 590, 'g'),
+                          ('R', 630, 685, 'r'),
+                          ('Re', 690, 730, 'darkred'),
+                          ('NIR', 760, 850, 'dimgray')]}  
+						  
+Gaofen_2 = {'name': 'Gaofen-2',
+               'bands':  [('B', 450, 520, 'b'),
+			              ('G', 520, 590, 'g'),
+                          ('R', 620, 690, 'r'),
+                          ('NIR', 770, 890, 'dimgray')]}  
+Gaofen_2_P = {'name': None,
+               'bands':  [('P', 450, 890, 'gray')]}
+						  
 GE_1 = {'name': 'GeoEye-1 GIS',
                'bands':  [('B', 450, 510, 'b'),
 			              ('G', 510, 580, 'g'),
@@ -252,6 +266,9 @@ plot_sensor(ax0, WV_2, 35, 5)
 plot_sensor(ax0, WV_2_P, 32, 3)
 plot_sensor(ax0, GE_1, 45, 5)
 plot_sensor(ax0, GE_1_P, 42, 3)
+plot_sensor(ax0, RapidEye, 55, 5)
+plot_sensor(ax0, Gaofen_2, 65, 5)
+plot_sensor(ax0, Gaofen_2_P, 62, 3)
 
 fig.savefig('TransmissionVHRSensorBands.png', bbox_inches='tight', dpi=300)
 
