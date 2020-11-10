@@ -33,6 +33,25 @@ Available for both VHR satellite (Worldview/Pleiades class, <5M GSD), and lower 
 
 ![](TransmissionSensorBands.png)
 
+
+## Bit Depth
+
+bit_depth_diagram.py makes a plot showing the ways of representing black to white using anywhere from 2 to 2<sup>12</sup> colors.
+
+![](BitDepths.png)
+
+bit_depth_comparison.py shows a similar thing, showing the same subset of a landsat scene (not included) using 2 to 2<sup>16</sup> colors.
+
+![](BitDepthExample.png)
+
+
+## EM wave plot
+
+emr_wave_plot.py plots a 3-d representation of an electromagnetic wave, with the electric component shown in blue and the magnetic component shown in red - though feel free to change the labelling if you prefer.
+
+![](emr_wave.png)
+
+
 ### Footnotes
 -----
 <a id="note1" href="#note1ref"><sup>1</sup></a>ATRAN modelling software (Lord, S.D. 1992, NASA Technical Memor. 103957)
