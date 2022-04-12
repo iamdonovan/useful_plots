@@ -49,7 +49,7 @@ def annotate_patch(ax, patch, label):
     return lab
 
 
-fig, ax = plt.subplots(1, 1, figsize=(12, 8))
+fig, ax = plt.subplots(1, 1, figsize=(24, 16))
 
 ax.set_xlim(1968, 2024)
 ax.tick_params(axis='x', labelsize=24)
@@ -62,7 +62,7 @@ ax.spines['top'].set_visible(False)
 res_labels = ['< 1 m', '1-10 m', '10-30 m', '30-100 m', '> 100 m']
 res_colors = ['blueviolet', 'cornflowerblue', 'lightseagreen', 'sandybrown', 'lightcoral']
 
-today = 2020.75 # current year-ish
+today = 2022.25 # current year-ish
 
 # lists of the satellite data.
 # form is (name, start, end, position on graph, res_colors index, alpha)
@@ -78,7 +78,8 @@ landsat = [('Landsat 1 MSS', 1972.5, 1978, 3, 1),
            (None, today, 2025, 2, 0.2),
            ('Landsat 8 OLI/TIRS', 2013, today, 2, 1),
            (None, today, 2025, 2, 0.2),
-           ('Landsat 9', 2021.25, 2025, 2, 0.2)]
+           ('Landsat 9 OLI/TIRS', 2021.75, today, 2, 1),
+           (None, today, 2025, 2, 0.2)]
 
 # terra
 terra = [('ASTER', 1999.9, today, 2, 1),
@@ -125,10 +126,13 @@ wv = [('IKONOS', 1999.75, 2015.25, 0, 1),
 
 rapideye = [('RapidEye', 2008.75, 2020.25, 1, 1)]
 
+planet = [('Planet', 2010.5, today, 1, 1),
+          (None, today, 2025, 1, 0.2)]
+
 # plot and annotate all of the sensors - change combination as you see fit.
 this_pos = 0
 
-for sens in landsat + terra + sentinel + spot + alos + pleiades + wv + rapideye:
+for sens in landsat + terra + sentinel + spot + alos + pleiades + wv + rapideye + planet:
     label, start_year, end_year, fc, alpha = sens
     if label == 'Landsat 6 ETM+':
         patch = make_patch(start_year, end_year, 0, res_colors[fc], alpha)
@@ -161,3 +165,4 @@ make_legend(ax, res_labels, res_colors)
 # ax.add_patch(free_box)
 
 # ax.annotate('Free Data!', (1971.2, 10), size=20)  # placed based on landsat + terra + sentinel, above
+fig.savefig('SatelliteMissions.png', dpi=100, bbox_inches='tight')
