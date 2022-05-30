@@ -132,14 +132,13 @@ landsat_oli = {'name': 'Landsat 8 OLI/TIRS',
                          (10, 10600, 11190, 'khaki'),
                          (11, 11500, 12510, 'khaki')]}
 
-sentinel2 = {'name': 'Sentinel-2 MSI',
-             'bands': [(1, 433, 453, 'seagreen'),
+sentinel2 = {'name': 'Sentinel-2',
+             'bands': [(1, 433, 453, 'mediumturquoise'),
                        (2, 457.5, 522.5, 'b'),
                        (3, 542.5, 577.5, 'g'),
                        (4, 650, 680, 'r'),
                        (5, 697.5, 712.5, 'darkred'),
                        (6, 732.5, 747.5, 'darkred'),
-                       (7, 773, 793, 'darkred'),
                        (8, 784.5, 899.5, 'darkred'),
                        (9, 935, 955, 'silver'),
                        (10, 1360, 1390, 'silver'),
@@ -147,7 +146,8 @@ sentinel2 = {'name': 'Sentinel-2 MSI',
                        (12, 2100, 2280, 'dimgray')]}
 
 sentinel2_8a = {'name': None,
-                'bands': [('8a', 855, 875, 'darkred')]}
+                'bands': [(7, 773, 793, 'darkred'),
+                          ('8a', 855, 875, 'darkred')]}
 
 etm_pan = {'name': None,
            'bands': [('8', 520, 900, 'slategrey')]}
