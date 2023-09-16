@@ -1,3 +1,4 @@
+from pathlib import Path
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -208,5 +209,5 @@ hyperion_bands = np.arange(357, 2576, 10)
 
 # plot_sensor(ax0, ax1, modis, 70, 5, fontsize=8)
 
-fig.savefig('TransmissionSensorHyperspectral_.png', bbox_inches='tight', dpi=300)
+fig.savefig(Path('figures', 'TransmissionSensorHyperspectral_.png'), bbox_inches='tight', dpi=300)
 

@@ -1,3 +1,4 @@
+from pathlib import Path
 from scipy.constants import codata
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
@@ -54,4 +55,4 @@ cbar.set_label('Temperature (K)', fontsize='xx-small')
 cbaxes.yaxis.set_label_position('left')
 cbar.ax.tick_params(labelsize='xx-small')
 
-fig.savefig('planck_plot.png', bbox_inches='tight', dpi=200)
+fig.savefig(Path('figures', 'planck_plot.png'), bbox_inches='tight', dpi=200)

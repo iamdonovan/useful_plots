@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
@@ -270,5 +271,4 @@ plot_sensor(ax0, RapidEye, 55, 5)
 plot_sensor(ax0, Gaofen_2, 65, 5)
 plot_sensor(ax0, Gaofen_2_P, 62, 3)
 
-fig.savefig('TransmissionVHRSensorBands.png', bbox_inches='tight', dpi=300)
-
+fig.savefig(Path('figures', 'TransmissionVHRSensorBands.png'), bbox_inches='tight', dpi=300)

@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -61,4 +62,4 @@ ax2.set_ylim(0, 100)
 ax2.tick_params(axis='y', labelsize=20)
 ax2.set_ylabel('emitted radiation (%)', size=20)
 
-f1.savefig('ThermalTransmissionEmittance.png', bbox_inches='tight', dpi=300)
+f1.savefig(Path('figures', 'ThermalTransmissionEmittance.png'), bbox_inches='tight', dpi=300)

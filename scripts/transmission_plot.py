@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
@@ -226,5 +227,4 @@ plot_sensor(ax0, ax1, sentinel2_8a, 57, 3)
 
 # plot_sensor(ax0, ax1, modis, 70, 5, fontsize=8)
 
-fig.savefig('TransmissionSensorBands.png', bbox_inches='tight', dpi=300)
-
+fig.savefig(Path('figures', 'TransmissionSensorBands.png'), bbox_inches='tight', dpi=300)

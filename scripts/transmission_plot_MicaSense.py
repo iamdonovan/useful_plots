@@ -1,3 +1,4 @@
+from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib import gridspec
@@ -163,5 +164,5 @@ plot_sensor(ax0, ax1, MX_Blue, 30, 10)
 plot_sensor(ax0, ax1, MX_Red, 42.5, 10)
 plot_sensor(ax0, ax1, Altum_PT, 55, 10)
 
-fig.savefig('TransmissionMicasenseSensorBands.png', bbox_inches='tight', dpi=300)
+fig.savefig(Path('figures', 'TransmissionMicasenseSensorBands.png'), bbox_inches='tight', dpi=300)
 

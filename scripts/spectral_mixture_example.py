@@ -1,3 +1,4 @@
+from pathlib import Path
 import os
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
@@ -43,5 +44,5 @@ ax2.set_xlim(350, 2500)
 ax2.set_ylabel('$\\rho(\lambda)$ (pct.)')
 ax2.set_xlabel('$\lambda$ (nm)')
 
-f2.savefig('mixed_reflectance.png', bbox_inches='tight', dpi=300)
+f2.savefig(Path('figures', 'mixed_reflectance.png'), bbox_inches='tight', dpi=300)
 

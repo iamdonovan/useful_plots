@@ -1,3 +1,4 @@
+from pathlib import Path
 import matplotlib.pyplot as plt
 from matplotlib.patches import Rectangle
 import numpy as np
@@ -60,4 +61,4 @@ ax.set_ylim(0, 100)
 ax.set_ylabel('$\\rho(\lambda)$ (pct.)')
 ax.set_xlabel('$\lambda$ (nm)')
 
-fig.savefig('spectral_plot.png', bbox_inches='tight', dpi=200)
+fig.savefig(Path('figures', 'spectral_plot.png'), bbox_inches='tight', dpi=200)
