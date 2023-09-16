@@ -42,7 +42,7 @@ def plot_sensor(ax0, sens, yloc, height, **kwargs):
                      textcoords='offset points', ha='left', va='center', color='k', size=11)
 
 
-data = pd.read_csv('smoothed_transmission.csv')
+data = pd.read_csv(Path('data', 'smoothed_transmission.csv'))
 data['transmission'] *= 100
 
 

@@ -59,8 +59,7 @@ def plot_hyper(ax, bands, yloc, height, fontsize=11, name=None):
                     textcoords='offset points', ha='left', va='center', color='k', size=11)
 
 
-
-data = pd.read_csv('smoothed_transmission.csv')
+data = pd.read_csv(Path('data', 'smoothed_transmission.csv'))
 data['transmission'] *= 100
 
 
