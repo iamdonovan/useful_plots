@@ -1,3 +1,5 @@
+from pathlib import Path
+from datetime import datetime
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.patches import Rectangle
@@ -62,7 +64,12 @@ ax.spines['top'].set_visible(False)
 res_labels = ['< 1 m', '1-10 m', '10-30 m', '30-100 m', '> 100 m']
 res_colors = ['blueviolet', 'cornflowerblue', 'lightseagreen', 'sandybrown', 'lightcoral']
 
-today = 2022.5 # current year-ish
+#  today = 2023.5 # current year-ish
+current_date = datetime.today().date()
+frac_date = current_date.timetuple().tm_yday / datetime(current_date.year, 12, 31).timetuple().tm_yday
+
+# get the current date as a decimal year to 2 digits
+today = current_date.year + round(frac_date, 2)
 
 # lists of the satellite data.
 # form is (name, start, end, position on graph, res_colors index, alpha)
@@ -172,4 +179,4 @@ make_legend(ax, res_labels, res_colors)
 # ax.add_patch(free_box)
 
 # ax.annotate('Free Data!', (1971.2, 10), size=20)  # placed based on landsat + terra + sentinel, above
-fig.savefig('SatelliteMissions.png', dpi=100, bbox_inches='tight')
+fig.savefig(Path('figures', 'SatelliteMissions.png'), dpi=100, bbox_inches='tight')

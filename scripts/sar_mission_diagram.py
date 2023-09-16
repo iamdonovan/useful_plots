@@ -1,3 +1,5 @@
+from pathlib import Path
+from datetime import datetime
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.patches import Rectangle
@@ -48,10 +50,16 @@ def annotate_patch(ax, patch, label):
                       ha=align, va='center', color=clr, size=11) # use 11 pt font, centered vertically, left-aligned, ...
     return lab
 
+# today = 2020.75 # current year-ish
+current_date = datetime.today().date()
+frac_date = current_date.timetuple().tm_yday / datetime(current_date.year, 12, 31).timetuple().tm_yday
+
+# get the current date as a decimal year to 2 digits
+today = current_date.year + round(frac_date, 2)
 
 fig, ax = plt.subplots(1, 1, figsize=(12, 8))
 
-ax.set_xlim(1990, 2024)
+ax.set_xlim(1990, current_date.year + 5)
 ax.tick_params(axis='x', labelsize=24)
 ax.set_yticks([])
 
@@ -61,8 +69,6 @@ ax.spines['top'].set_visible(False)
 
 res_labels = ['X-band', 'C-band', 'L-band']
 res_colors = ['blueviolet', 'cornflowerblue', 'lightseagreen']
-
-today = 2020.75 # current year-ish
 
 # lists of the satellite data.
 # form is (name, start, end, position on graph, res_colors index, alpha)
@@ -117,4 +123,4 @@ ax.plot([today, today], [0, this_pos], 'k', linewidth=1)
 make_legend(ax, res_labels, res_colors)
 
 # save the figure
-fig.savefig('SARSatelliteMissions.png', dpi=300, bbox_inches='tight')
+fig.savefig(Path('figures', 'SARSatelliteMissions.png'), dpi=300, bbox_inches='tight')
