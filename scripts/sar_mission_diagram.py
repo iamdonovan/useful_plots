@@ -12,7 +12,7 @@ def make_legend(ax, names, colors):
         patches.append(mpatches.Patch(color=c, label=n))
 
     ax.legend(loc='upper left', bbox_to_anchor=(0, 1), framealpha=1, handles=patches, 
-              title='max. ground res.', title_fontsize=18, fontsize=18, borderaxespad=0)
+              fontsize=18, borderaxespad=0)
 
 
 # create a rectangular patch, given the satellite data
