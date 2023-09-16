@@ -175,7 +175,8 @@ ax.plot([today, today], [0, this_pos], 'k', linewidth=1)
 make_legend(ax, res_labels, res_colors)
 
 # add a box indicating free data
-# free_box = Rectangle([1971, 0], 52.5, 11, fc=None, fill=False, ec='r', lw=3, zorder=3)
+# width = today - 1971
+# free_box = Rectangle([1971, 0], width, 17, fc=None, fill=False, ec='r', lw=3, zorder=3)
 # ax.add_patch(free_box)
 
 # ax.annotate('Free Data!', (1971.2, 10), size=20)  # placed based on landsat + terra + sentinel, above
