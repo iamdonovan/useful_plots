@@ -70,6 +70,12 @@ in blue and the magnetic component shown in red - though feel free to change the
 
 ![](figures/emr_wave.png)
 
+## Absorption components plot
+
+`scripts/absorption_components.py` plots a figure showing the transmission of different components of the atmosphere.
+
+![](figures/AbsorptionComponents.png)
+
 
 ### Footnotes
 -----
