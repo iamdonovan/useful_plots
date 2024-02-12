@@ -77,6 +77,12 @@ in blue and the magnetic component shown in red - though feel free to change the
 ![](figures/AbsorptionComponents.png)
 
 
+## Electromagnetic spectrum diagram
+
+`scripts/em_spectrum.py` plots a diagram showing major divisions of the electromagnetic spectrum:
+
+![](figures/ElectromagneticSpectrum.png)
+
 ### Footnotes
 -----
 <a id="note1" href="#note1ref"><sup>1</sup></a>ATRAN modelling software (Lord, S.D. 1992, NASA Technical Memor. 103957)
