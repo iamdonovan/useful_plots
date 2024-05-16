@@ -170,6 +170,20 @@ Pleiades_1_G = {'name': None,
                'bands':  [('G', 490, 610, 'g')]}  
 Pleiades_1_P = {'name': None,
                'bands':  [('P', 480, 830, 'gray')]}  
+               
+Planet_PSBSD = {'name': 'Planet Doves PSB.SD',
+               'bands':  [('B', 440, 540, 'b'),
+			              ('Y', 590, 630, 'y'),
+                          ('R', 634, 696, 'r'),
+                          ('NIR', 825, 905, 'dimgray')]} 
+                          
+Planet_PSBSD_G_Re = {'name': None,
+               'bands':  [('G', 529, 601, 'g'),
+                          ('Re', 690, 720, 'darkred')]} 
+                          
+Planet_PSBSD_CB_GI = {'name': None,
+               'bands':  [('Coastal', 423, 463, 'darkblue'),
+			              ('GI', 495, 567, 'g')]} 
 
 #TO BE CONFIRMED
 Pleiades_NEO = {'name': 'Pleiades-NEO',
@@ -270,5 +284,8 @@ plot_sensor(ax0, GE_1_P, 42, 3)
 plot_sensor(ax0, RapidEye, 55, 5)
 plot_sensor(ax0, Gaofen_2, 65, 5)
 plot_sensor(ax0, Gaofen_2_P, 62, 3)
+plot_sensor(ax0, Planet_PSBSD, 75, 2.5) 
+plot_sensor(ax0, Planet_PSBSD_G_Re, 72.5, 2.5)
+plot_sensor(ax0, Planet_PSBSD_CB_GI, 77.5, 2.5)
 
 fig.savefig(Path('figures', 'TransmissionVHRSensorBands.png'), bbox_inches='tight', dpi=300)
