@@ -118,6 +118,12 @@ MX_Blue = {'name': 'MX-Blue',
                           ('R-Edge', 700, 710, 'darkred'),
                           ('R-Edge', 731, 749, 'darkred')]}  
 
+Mavic_3M = {'name': 'DJI Mavic 3M',
+               'bands':  [('G', 534, 566, 'g'),
+                          ('R', 634, 666, 'r'),
+                          ('R-Edge', 714, 746, 'darkred'),
+                          ('NIR', 834, 886, 'dimgray')]}  
+                          
 Altum_PT = {'name': 'Altum-PT',
                'bands':  [('Panchromatic', 400, 850, 'slategrey'),
                           ('Thermal', 7500, 13500, 'dimgray')]}  
@@ -163,6 +169,7 @@ plot_sensor(ax0, ax1, sentinel2_8a, 12, 3)
 plot_sensor(ax0, ax1, MX_Blue, 30, 10)
 plot_sensor(ax0, ax1, MX_Red, 42.5, 10)
 plot_sensor(ax0, ax1, Altum_PT, 55, 10)
+plot_sensor(ax0, ax1, Mavic_3M, 70, 10)
 
 fig.savefig(Path('figures', 'TransmissionMicasenseSensorBands.png'), bbox_inches='tight', dpi=300)
 
